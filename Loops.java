@@ -6,11 +6,13 @@ public class Loops {
             n++;
         }
         for (int i = 1; i <= 5; i++) {
-            System.out.print("* ");
-            for (int j = 0; j < 5 - i; j++) {
-                System.out.print("* ");
+            for (int a = 1; a <= 5; a++) {
+                if (i > 1 && i < 5 && a > 1 && a < 5)
+                    System.out.print(" ");
+                else
+                    System.out.print("*");
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 }
