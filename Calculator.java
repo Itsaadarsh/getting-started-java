@@ -16,8 +16,10 @@ class Calc {
         this.num2 = n2;
     }
 
-    public void add() {
-        result = num1 + num2;
+    public void add(int... nums) {
+        for (int num : nums) {
+            result += num;
+        }
     }
 
     public void sub() {
@@ -29,8 +31,7 @@ class Calc {
 public class Calculator {
     public static void main(String[] args) {
         Calc obj = new Calc();
-        System.out.println(Calc.result);
-        obj.add();
+        obj.add(10, 20, 30);
         System.out.println(Calc.result);
     }
 }
