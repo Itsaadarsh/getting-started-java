@@ -17,8 +17,12 @@ class Calc {
     }
 
     public void add(int... nums) {
-        for (int num : nums) {
-            result += num;
+        if (nums.length > 0) {
+            for (int num : nums) {
+                result += num;
+            }
+        } else {
+            result = num1 + num2;
         }
     }
 
@@ -28,10 +32,35 @@ class Calc {
 
 }
 
+class CalcAdv extends Calc {
+    private int num3;
+
+    public CalcAdv(int n1, int n2, int n3) {
+        super(n1, n2);
+        this.num3 = n3;
+    }
+
+    public void mul(int... nums) {
+        if (nums.length > 0) {
+            result = 1;
+            for (int num : nums) {
+                result *= num;
+            }
+        } else {
+            result = num1 * num2;
+        }
+    }
+
+    public void displayPri() {
+        System.out.println(this.num3);
+    }
+}
+
 public class Calculator {
     public static void main(String[] args) {
-        Calc obj = new Calc();
-        obj.add(10, 20, 30);
+        CalcAdv obj = new CalcAdv(4, 5, 3);
+        obj.displayPri();
+        obj.mul();
         System.out.println(Calc.result);
     }
 }
